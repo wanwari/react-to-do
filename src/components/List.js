@@ -1,10 +1,11 @@
 import ListItem from "./ListItem";
 
-const List = () => {
+const List = ({ toDoItems }) => {
     return(
         <ul>
-            <ListItem>Hello</ListItem>
-            <ListItem>World</ListItem>
+            {toDoItems.map((item, index) => (
+                <ListItem key={ index }>{ item }</ListItem>
+            ))}
         </ul>
     );
 }
