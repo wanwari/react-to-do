@@ -6,7 +6,7 @@ const AddItem = props => {
 
     return(
         <>
-            <form>
+            <form onSubmit={(e) => {e.preventDefault(); props.addItemToList(itemToAdd)}}>
                 <input
                     id="listItemToAdd"
                     type="text"
