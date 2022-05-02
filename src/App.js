@@ -15,11 +15,23 @@ const App = () => {
 		setToDoItems(tmpArray);
 	}
 
+	const editItemFromList = (index, newText) => {
+		let tmpArray = [];
+		for (let i = 0; i < toDoItems.length; i++) {
+			if (i === index)
+				tmpArray.push(newText);
+			else
+				tmpArray.push(toDoItems[i]);
+		}
+		setToDoItems(tmpArray);
+	} 
+
 	return(
 		<>
 			<List 
 				toDoItems={ toDoItems }
 				deleteItemFromList={(index) => deleteItemFromList(index)}
+				editItemFromList={(index, newText) => editItemFromList(index, newText)}
 			/>
 
 			<AddItem 

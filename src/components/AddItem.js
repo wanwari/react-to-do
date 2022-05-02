@@ -17,7 +17,7 @@ const AddItem = props => {
                     type="text"
                     placeholder="feed the chickens"
                     value={itemToAdd}
-                    onChange={(event) => { setItemToAdd(event.target.value)}}
+                    onChange={(event) => {setItemToAdd(event.target.value)}}
                 />  
                 <input 
                     type="button"
