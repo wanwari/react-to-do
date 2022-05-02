@@ -3,7 +3,7 @@ import { useState } from "react";
 const ListItem = props => {
 
     const [displayEditBox, setDisplayEditBox] = useState(false);
-    const [editBoxContent, setEditBoxContent] = useState("");
+    const [editBoxContent, setEditBoxContent] = useState(props.children);
 
     const updateValue = () => {
         props.editItemFromList(props.itemIndex, editBoxContent);
