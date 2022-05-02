@@ -10,10 +10,22 @@ const App = () => {
 		setToDoItems(toDoItems => [...toDoItems, itemToAdd]);
 	}
 
+	const deleteItemFromList = index => {
+		const tmpArray = (toDoItems.filter((el, i) => index !== i));
+		setToDoItems(tmpArray);
+	}
+
 	return(
 		<>
-			<List toDoItems={ toDoItems }/>
-			<AddItem addItemToList={(itemToAdd) => addItemToList(itemToAdd) }/>
+			<List 
+				toDoItems={ toDoItems }
+				deleteItemFromList={(index) => deleteItemFromList(index)}
+			/>
+
+			<AddItem 
+				addItemToList={(itemToAdd) => addItemToList(itemToAdd)}
+
+			/>
 		</>
 	)
 }

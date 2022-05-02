@@ -1,7 +1,11 @@
 
-const ListItem = ({ children })=> {
+const ListItem = props => {
     return(
-        <li>{ children }</li>
+        <li>
+            { props.children } 
+            <button>Edit</button>
+            <button onClick={ () => props.deleteItemFromList(props.itemIndex) }>Delete</button>
+        </li>
     );
 }
 
