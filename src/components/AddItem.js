@@ -4,9 +4,14 @@ const AddItem = props => {
 
     const [itemToAdd, setItemToAdd] = useState("");
 
+    const submitForm = () => {
+        props.addItemToList(itemToAdd);
+        setItemToAdd("");
+    }
+
     return(
         <>
-            <form onSubmit={(e) => {e.preventDefault(); props.addItemToList(itemToAdd)}}>
+            <form onSubmit={(e) => {e.preventDefault(); submitForm()}}>
                 <input
                     id="listItemToAdd"
                     type="text"
@@ -17,7 +22,7 @@ const AddItem = props => {
                 <input 
                     type="button"
                     value="submit"
-                    onClick={() => {props.addItemToList(itemToAdd)}}
+                    onClick={() => submitForm()}
                 />
             </form>
             <p>To Add: { itemToAdd }</p>
