@@ -12,15 +12,15 @@ const ListItem = props => {
 
     let editBox;
     if (displayEditBox) {
-        editBox = 
+        editBox = ( 
             <div>
                 <input 
                     type="text"
-                    value={editBoxContent}
                     onChange={(event) => setEditBoxContent(event.target.value)}
                 />
                 <button onClick={updateValue}>Save</button>
-            </div>;
+            </div>
+        );
     }
 
     return(
